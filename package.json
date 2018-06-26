@@ -1,0 +1,17 @@
+{
+  "name": "audio-scrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "4k": "0.0.9",
+    "xml2js": "^0.4.19",
+    "xml2json": "^0.11.2"
+  }
+}

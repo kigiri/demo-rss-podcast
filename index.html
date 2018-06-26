@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div id="podcasts"></div>
+<script type="module">
+const podcastsEl = document.getElementById('podcasts')
+
+fetch('./data.json')
+  .then(res => res.json())
+  .then(podcasts => {
+    podcastsEl.innerHTML = podcasts
+      .map(podcast => `
+        <div>
+          <h2>${podcast.title}</h2>
+          ${podcast.items.slice(0,3).map((item, i) => `
+            <div>
+              <label for="podcast-${i}">${item.title}</label>
+              <br>
+              <audio
+                id="podcast-${i}"
+                preload="none"
+                controls
+                src="${item.url}"
+                type=${item.type}>
+              </audio>
+            </div>`)
+      .join('\n')}
+        </div>
+        `).join('\n')
+
+  })
+
+</script>
+
+</body>
+</html>
